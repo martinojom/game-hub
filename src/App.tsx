@@ -1,9 +1,9 @@
 import { Grid, GridItem, useBreakpointValue } from "@chakra-ui/react";
-import "./App.css";
 import NavBar from "./components/NavBar";
 
 function App() {
   const showSidebar = useBreakpointValue({ base: false, lg: true });
+
   return (
     <Grid
       templateAreas={{
