@@ -12,10 +12,8 @@ function App() {
         lg: `"nav nav" "aside main"`,
       }}
     >
-      <GridItem area={"nav"}>
-        <NavBar />
-      </GridItem>
-      {showSidebar && <GridItem area={"aside"}>Aside</GridItem>}
+      <GridItem area={"nav"}>{<NavBar />}</GridItem>
+      {/* {showSidebar && <GridItem area={"aside"}>Aside</GridItem>} */}
 
       <GridItem area={"main"}>
         <GameGrid />
