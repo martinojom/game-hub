@@ -17,7 +17,7 @@ const useData = <T>(endpoint: string) => {
 
     setLoading(true);
     apiClient
-      .get<FetchResponse<T>>(endpoint, { signal: controller.signal })
+      .get<FetchResponse<T>>(endpoint)
       .then((res) => {
         setData(res.data.results);
         setLoading(false);
@@ -29,7 +29,7 @@ const useData = <T>(endpoint: string) => {
       });
 
     return () => controller.abort();
-  }, []);
+  }, [endpoint]);
 
   return { data, error, isLoading };
 };
