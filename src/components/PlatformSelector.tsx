@@ -1,7 +1,7 @@
 import type { Platform } from "@/hooks/useGames";
 import usePlatforms from "@/hooks/usePlatforms";
 import { Button, Menu, Portal } from "@chakra-ui/react";
-import { useState } from "react";
+// import { useState } from "react";
 import { AiOutlineDown } from "react-icons/ai";
 
 interface Props {
