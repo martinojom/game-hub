@@ -49,7 +49,7 @@ function App() {
         </GridItem>
       )}
 
-      <GridItem area={"main"}>
+      <GridItem marginX={5} area={"main"}>
         <Flex>
           <Box marginRight={5}>
             <PlatformSelector
