@@ -37,7 +37,7 @@ function App() {
         lg: "270px 1fr",
       }}
     >
-      <GridItem area="nav">
+      <GridItem marginX={2} area="nav">
         <NavBar />
       </GridItem>
       {showSidebar && (
