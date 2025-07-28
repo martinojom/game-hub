@@ -3,7 +3,6 @@ import {
   Flex,
   Grid,
   GridItem,
-  HStack,
   useBreakpointValue,
 } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
@@ -14,6 +13,7 @@ import type { Genre } from "./hooks/useGenres";
 import PlatformSelector from "./components/PlatformSelector";
 import type { Platform } from "./hooks/useGames";
 import SortSelelctor from "./components/SortSelelctor";
+import GameHeading from "./components/GameHeading";
 
 export interface GameQuery {
   genre: Genre | null;
@@ -53,6 +53,7 @@ function App() {
       )}
 
       <GridItem marginX={5} area={"main"}>
+        <GameHeading gameQuery={gameQuery} />
         <Flex>
           <Box marginRight={5}>
             <PlatformSelector
