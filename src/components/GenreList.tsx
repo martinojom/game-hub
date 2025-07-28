@@ -1,6 +1,6 @@
 import useGenres, { type Genre } from "@/hooks/useGenres";
 import getCroppedImageUrl from "@/services/Image-url";
-import { Button, HStack, Image, List } from "@chakra-ui/react";
+import { Button, Heading, HStack, Image, List } from "@chakra-ui/react";
 import GenreListSkeleton from "./GenreListSkeleton";
 import GenreLink from "./GenreLink";
 
@@ -18,27 +18,34 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
     return Skeletons.map((skeleton) => <GenreListSkeleton key={skeleton} />);
 
   return (
-    <List.Root>
-      {data.map((genre) => (
-        <List.Item listStyle="none" key={genre.id} paddingY="5px">
-          <HStack>
-            <Image
-              boxSize="32px"
-              borderRadius={8}
-              src={getCroppedImageUrl(genre.image_background)}
-            />
-            <Button
-              fontWeight={genre.id === selectedGenre?.id ? "bolder" : "normal"}
-              onClick={() => onSelectGenre(genre)}
-              variant="plain"
-              fontSize="lg"
-            >
-              <GenreLink genre={genre.name} />
-            </Button>
-          </HStack>
-        </List.Item>
-      ))}
-    </List.Root>
+    <>
+      <Heading fontSize="2xl" marginBottom={3}>
+        Genres
+      </Heading>
+      <List.Root>
+        {data.map((genre) => (
+          <List.Item listStyle="none" key={genre.id} paddingY="5px">
+            <HStack>
+              <Image
+                boxSize="32px"
+                borderRadius={8}
+                src={getCroppedImageUrl(genre.image_background)}
+              />
+              <Button
+                fontWeight={
+                  genre.id === selectedGenre?.id ? "bolder" : "normal"
+                }
+                onClick={() => onSelectGenre(genre)}
+                variant="plain"
+                fontSize="lg"
+              >
+                <GenreLink genre={genre.name} />
+              </Button>
+            </HStack>
+          </List.Item>
+        ))}
+      </List.Root>
+    </>
   );
 };
 
