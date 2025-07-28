@@ -17,7 +17,7 @@ const PlatformSelector = ({ onSelectedPlatform, selectedPlatform }: Props) => {
   return (
     <Menu.Root>
       <Menu.Trigger asChild>
-        <Button marginBottom={3} bg="AppWorkspace" variant="plain">
+        <Button marginBottom={10} bg="AppWorkspace" variant="plain">
           {selectedPlatform?.name || "Platforms"}
           <AiOutlineDown />
         </Button>
