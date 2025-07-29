@@ -4,6 +4,8 @@ import { Button, Heading, HStack, Image, List } from "@chakra-ui/react";
 import GenreListSkeleton from "./GenreListSkeleton";
 import GenreLink from "./GenreLink";
 
+
+
 interface Props {
   onSelectGenre: (genre: Genre) => void;
   selectedGenre: Genre | null;
